@@ -232,17 +232,16 @@
     <p>© 2025 Η Φαμίλια - Ψητοπωλείο | Χαλάνδρι</p>
   </footer>
 
-  <!-- LightGallery JS -->
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@latest/plugins/lg-iframe.min.js"></script>
-
+  <!-- LightGallery UMD Bundle with all plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
 
   <script>
-    // Init photo gallery
-    lightGallery(document.getElementById("gallery-container"), {
-      plugins: [lgZoom, lgThumbnail],
+    // Alias for the UMD bundle global
+    const lg = window.lightGallery;
+
+    // Init photo gallery with zoom and thumbnail plugins
+    lg(document.getElementById("gallery-container"), {
+      plugins: [lg.Zoom, lg.Thumbnail],
       speed: 500,
       download: false,
       mobileSettings: {
@@ -252,9 +251,9 @@
       },
     });
 
-    // Init menu gallery on hidden container
-    const menuGallery = lightGallery(document.getElementById("menu-gallery"), {
-      plugins: [lgZoom, lgThumbnail, lgIframe],
+    // Init hidden menu gallery with zoom, thumbnail and iframe plugins
+    const menuGallery = lg(document.getElementById("menu-gallery"), {
+      plugins: [lg.Zoom, lg.Thumbnail, lg.Iframe],
       download: false,
       mobileSettings: {
         controls: true,
