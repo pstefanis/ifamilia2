@@ -106,24 +106,14 @@ footer {
 }
 
 /* HERO image fix for mobile */
-/*@media (max-width: 768px) {
+@media (max-width: 768px) {
   .hero {
     height: calc(100vw / 1.5); /* height matches image aspect ratio */
-   /* background-position: center center;
+    background-position: center center;
     background-size: 100% auto;
     background-repeat: no-repeat;
   }
-} */
-
-@media (max-width: 768px) {
-  .hero {
-    height: 100vh;          /* full viewport height */
-    background-position: center center;
-    background-size: cover; /* cover to fill entire area */
-    background-repeat: no-repeat;
-  }
-  
-  /* Optional: add smooth scroll for better UX */
+/* Optional: add smooth scroll for better UX */
   html {
     scroll-behavior: smooth;
   }
