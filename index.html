@@ -1,270 +1,89 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Η Φαμίλια - Παραδοσιακή Ταβέρνα</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Greek&family=Inter:wght@300;500;700&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Greek&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- LightGallery CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
-  />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #111;
-      color: #f0f0f0;
-    }
-
-    h1, h2 {
-      font-family: 'Noto Serif Greek', serif;
-    }
-
-    .hero {
-      position: relative;
-      height: 100vh;
-      background: url('images/hero.jpg') center center no-repeat;
-      background-size: 150% auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    section {
-      padding: 60px 20px;
-      background-color: #111;
-    }
-
-    section:nth-child(even) {
-      background-color: #1a1a1a;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .menu-button {
-      display: inline-block;
-      background-color: #fff;
-      color: #111;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-
-    .menu-button:hover {
-      background-color: #ccc;
-      color: #111;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .gallery-grid a {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-      cursor: pointer;
-    }
-
-    section.location iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 8px;
-    }
-
-    #menu-gallery {
-      position: absolute;
-      width: 0;
-      height: 0;
-      overflow: hidden;
-      left: -9999px;
-      top: -9999px;
-    }
-
-    footer {
-      background-color: #000;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-    }
-
-    /* LightGallery iframe full size */
-    .lg-iframe {
-      width: 100% !important;
-      height: 100vh !important;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        height: 60vh;
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-    }
-  </style>
+  <!-- ✅ LightGallery CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css">
 </head>
 <body>
-  <header class="hero"></header>
 
-  <section class="about">
-    <div class="container">
-      <h2>Σχετικά με εμάς</h2>
-      <p>
-        Στην καρδιά του Χαλανδρίου, η "Φαμίλια" προσφέρει παραδοσιακές γεύσεις
-        φτιαγμένες με μεράκι. Οικογενειακή ατμόσφαιρα, ζεστή φιλοξενία και γνήσια
-        ελληνικά πιάτα.
-      </p>
-    </div>
-  </section>
+<header class="hero">
+  <!-- Removed overlay text -->
+</header>
 
-  <section class="menu">
-    <div class="container">
-      <h2>Το Μενού μας</h2>
-      <a id="menu-button" href="javascript:void(0);" class="menu-button">
-        Δείτε το μενού (PDF)
+<section class="about">
+  <div class="container">
+    <h2>Σχετικά με εμάς</h2>
+    <p>Στην καρδιά του Χαλανδρίου, η "Φαμίλια" προσφέρει παραδοσιακές γεύσεις φτιαγμένες με μεράκι. Οικογενειακή ατμόσφαιρα, ζεστή φιλοξενία και γνήσια ελληνικά πιάτα.</p>
+  </div>
+</section>
+
+<section class="menu">
+  <div class="container">
+    <h2>Το Μενού μας</h2>
+    <a class="menu-button" href="menu.pdf" target="_blank">Δείτε το μενού (PDF)</a>
+  </div>
+</section>
+
+<section class="gallery">
+  <div class="container">
+    <h2>Φωτογραφίες</h2>
+    <div id="gallery-container" class="gallery-grid">
+      <a href="images/photo1.jpeg" data-lg-size="1400-933" data-sub-html="<h4>Πιάτο 1</h4>">
+        <img src="images/photo1.jpeg" alt="πιάτο 1">
+      </a>
+      <a href="images/photo2.jpeg" data-lg-size="1400-933" data-sub-html="<h4>Πιάτο 2</h4>">
+        <img src="images/photo2.jpeg" alt="πιάτο 2">
+      </a>
+      <a href="images/photo3.jpeg" data-lg-size="1400-933" data-sub-html="<h4>Πιάτο 3</h4>">
+        <img src="images/photo3.jpeg" alt="πιάτο 3">
       </a>
     </div>
-  </section>
-
-  <!-- Hidden menu gallery container -->
-  <div id="menu-gallery">
-    <a
-      href="menu.pdf"
-      data-src="menu.pdf"
-      data-lg-size="800-1120"
-      data-sub-html="<h4>Το Μενού μας</h4>"
-      data-iframe="true"
-      data-lg-iframe-width="80%"
-      data-lg-iframe-height="90%"
-    >
-      PDF Menu
-    </a>
   </div>
+</section>
 
-  <section class="gallery">
-    <div class="container">
-      <h2>Φωτογραφίες</h2>
-      <div id="gallery-container" class="gallery-grid">
-        <a
-          href="images/photo1.jpeg"
-          data-lg-size="1400-933"
-          data-sub-html="<h4>Πιάτο 1</h4>"
-        >
-          <img src="images/photo1.jpeg" alt="πιάτο 1" />
-        </a>
-        <a
-          href="images/photo2.jpeg"
-          data-lg-size="1400-933"
-          data-sub-html="<h4>Πιάτο 2</h4>"
-        >
-          <img src="images/photo2.jpeg" alt="πιάτο 2" />
-        </a>
-        <a
-          href="images/photo3.jpeg"
-          data-lg-size="1400-933"
-          data-sub-html="<h4>Πιάτο 3</h4>"
-        >
-          <img src="images/photo3.jpeg" alt="πιάτο 3" />
-        </a>
-      </div>
-    </div>
-  </section>
+<section class="location">
+  <div class="container">
+    <h2>Που θα μας βρείτε</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1571.853259798848!2d23.78700772556597!3d38.007305400627054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1994e5071f269%3A0x3a1687aeb014569f!2zzpcgzqbOsc68zq_Ou865zrE!5e0!3m2!1sel!2sgr!4v1751377884418!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
 
-  <section class="location">
-    <div class="container">
-      <h2>Που θα μας βρείτε</h2>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1571.853259798848!2d23.78700772556597!3d38.007305400627054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1994e5071f269%3A0x3a1687aeb014569f!2zzpcgzqbOsc68zq_Ou865zrE!5e0!3m2!1sel!2sgr!4v1751377884418!5m2!1sel!2sgr"
-        width="600"
-        height="450"
-        style="border:0;"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-  </section>
+<section class="contact">
+  <div class="container">
+    <h2>Επικοινωνία</h2>
+    <p>📞 2106727727</p>
+    <p>📍 Τζαβέλλα 27, Χαλάνδρι 15231, Ελλάδα</p>
+    <p>🕒 Καθημερινά 12:00–00:00</p>
+  </div>
+</section>
 
-  <section class="contact">
-    <div class="container">
-      <h2>Επικοινωνία</h2>
-      <p>📞 2106727727</p>
-      <p>📍 Τζαβέλλα 27, Χαλάνδρι 15231, Ελλάδα</p>
-      <p>🕒 Καθημερινά 12:00–00:00</p>
-    </div>
-  </section>
+<footer>
+  <p>© 2025 Η Φαμίλια - Ψητοπωλείο | Χαλάνδρι</p>
+</footer>
 
-  <footer>
-    <p>© 2025 Η Φαμίλια - Ψητοπωλείο | Χαλάνδρι</p>
-  </footer>
+<!-- ✅ LightGallery JS -->
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
 
-  <!-- LightGallery UMD Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
-  <!-- Plugins -->
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/iframe/lg-iframe.umd.min.js"></script>
-
-  <script>
-    const lg = window.lightGallery;
-
-    // Initialize photo gallery with zoom and thumbnail plugins
-    lg(document.getElementById("gallery-container"), {
-      plugins: [lg.Zoom, lg.Thumbnail],
-      speed: 500,
+<script>
+  lightGallery(document.getElementById('gallery-container'), {
+    plugins: [lgZoom, lgThumbnail],
+    speed: 500,
+    download: false,
+    mobileSettings: {
+      controls: true,      // ✅ show arrows on mobile
+      showCloseIcon: true, // optional: keep close button visible
       download: false,
-      mobileSettings: {
-        controls: true,
-        showCloseIcon: true,
-        download: false,
-      },
-    });
+    }
+  });
+</script>
 
-    // Initialize hidden menu gallery with zoom, thumbnail, and iframe plugins
-    const menuGallery = lg(document.getElementById("menu-gallery"), {
-      plugins: [lg.Zoom, lg.Thumbnail, lg.Iframe],
-      download: false,
-      mobileSettings: {
-        controls: true,
-        showCloseIcon: true,
-      },
-    });
-
-    // Button click opens menu gallery, open slide 0 explicitly
-    document.getElementById("menu-button").addEventListener("click", () => {
-      menuGallery.openGallery(0);
-    });
-  </script>
 </body>
 </html>
