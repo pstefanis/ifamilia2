@@ -18,8 +18,6 @@ h1, h2 {
   justify-content: center;
 }
 
-/* Removed hero .overlay text */
-
 section {
   padding: 60px 20px;
   background-color: #111;
@@ -90,7 +88,7 @@ footer {
   padding: 20px;
 }
 
-/* Lightbox customization (optional) */
+/* Lightbox2 Customization */
 .lb-data .lb-caption {
   color: #fff !important;
 }
@@ -102,4 +100,16 @@ footer {
 .lb-nav a.lb-prev,
 .lb-nav a.lb-next {
   filter: brightness(1.5);
+  display: block !important;         /* ✅ Force always visible */
+  opacity: 1 !important;             /* ✅ Ensure visibility */
+}
+
+/* ✅ HERO image fix for mobile */
+@media (max-width: 768px) {
+  .hero {
+    height: 60vh;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }
