@@ -17,9 +17,7 @@
   />
 </head>
 <body>
-  <header class="hero">
-    <!-- Removed overlay text -->
-  </header>
+  <header class="hero"></header>
 
   <section class="about">
     <div class="container">
@@ -35,15 +33,11 @@
   <section class="menu">
     <div class="container">
       <h2>Το Μενού μας</h2>
-      <!-- Menu button opens the menu gallery modal -->
       <a id="menu-button" href="javascript:void(0);" class="menu-button"
         >Δείτε το μενού (PDF)</a
       >
     </div>
   </section>
-
-  <!-- Hidden menu PDF in a lightGallery container -->
-  <div id="menu-gallery" style="display:none;"></div>
 
   <section class="gallery">
     <div class="container">
@@ -109,20 +103,20 @@
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/iframe/lg-iframe.min.js"></script>
 
   <script>
-    // Initialize gallery for photos
+    // Photo gallery init
     lightGallery(document.getElementById("gallery-container"), {
       plugins: [lgZoom, lgThumbnail],
       speed: 500,
       download: false,
       mobileSettings: {
-        controls: true, // show arrows on mobile
-        showCloseIcon: true, // keep close button visible
+        controls: true,
+        showCloseIcon: true,
         download: false,
       },
     });
 
-    // Initialize hidden menu PDF lightGallery instance
-    const menuGallery = lightGallery(document.getElementById("menu-gallery"), {
+    // Dynamic menu PDF gallery
+    const menuGallery = lightGallery(document.body, {
       dynamic: true,
       dynamicEl: [
         {
@@ -134,7 +128,6 @@
           height: "90%",
         },
       ],
-      iframeMaxWidth: "80%",
       plugins: [lgZoom, lgThumbnail, lgIframe],
       download: false,
       mobileSettings: {
@@ -143,7 +136,6 @@
       },
     });
 
-    // Open PDF modal on menu button click
     document.getElementById("menu-button").addEventListener("click", () => {
       menuGallery.openGallery();
     });
