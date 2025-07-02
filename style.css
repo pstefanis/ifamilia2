@@ -108,9 +108,9 @@ footer {
 /* HERO image fix for mobile */
 @media (max-width: 768px) {
   .hero {
-    height: 60vh;
+    height: 60vh; /* keep your original height */
     background-position: center center;
-    background-size: cover;
+    background-size: 100% auto; /* full width, auto height */
     background-repeat: no-repeat;
   }
 }
