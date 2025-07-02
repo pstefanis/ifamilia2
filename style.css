@@ -12,7 +12,8 @@ h1, h2 {
 .hero {
   position: relative;
   height: 100vh;
-  background: url('images/hero.jpg') center center/cover no-repeat;
+  background: url('images/hero.jpg') center center no-repeat;
+  background-size: 110% auto; /* zoom out a bit horizontally */
   display: flex;
   align-items: center;
   justify-content: center;
