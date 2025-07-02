@@ -42,6 +42,7 @@ section:nth-child(even) {
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .menu-button:hover {
@@ -56,9 +57,23 @@ section:nth-child(even) {
   margin-top: 20px;
 }
 
+.gallery-grid a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
 .gallery-grid img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 iframe {
@@ -73,4 +88,18 @@ footer {
   color: #ccc;
   text-align: center;
   padding: 20px;
+}
+
+/* Lightbox customization (optional) */
+.lb-data .lb-caption {
+  color: #fff !important;
+}
+
+.lb-data .lb-number {
+  color: #aaa !important;
+}
+
+.lb-nav a.lb-prev,
+.lb-nav a.lb-next {
+  filter: brightness(1.5);
 }
