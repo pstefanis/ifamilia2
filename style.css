@@ -12,7 +12,7 @@ h1, h2 {
 .hero {
   position: relative;
   height: 100vh;
-  background: url('images/hero.jpg') center top/cover no-repeat;
+  background: url('images/hero.jpg') center center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,16 +100,16 @@ footer {
 .lb-nav a.lb-prev,
 .lb-nav a.lb-next {
   filter: brightness(1.5);
-  display: block !important;         /* ✅ Force always visible */
-  opacity: 1 !important;             /* ✅ Ensure visibility */
+  display: block !important;         /* Always visible */
+  opacity: 1 !important;
 }
 
-/* ✅ HERO image fix for mobile */
+/* HERO image fix for mobile */
 @media (max-width: 768px) {
   .hero {
     height: 60vh;
     background-position: center center;
-    background-size: contain;
+    background-size: cover;   /* cover to avoid black bars */
     background-repeat: no-repeat;
   }
 }
