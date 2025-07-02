@@ -6,6 +6,9 @@
   <title>Η Φαμίλια - Παραδοσιακή Ταβέρνα</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Greek&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -31,9 +34,15 @@
   <div class="container">
     <h2>Φωτογραφίες</h2>
     <div class="gallery-grid">
-      <img src="images/photo1.jpeg" alt="πιάτο 1">
-      <img src="images/photo2.jpeg" alt="πιάτο 2">
-      <img src="images/photo3.jpeg" alt="πιάτο 3">
+      <a href="images/photo1.jpeg" data-lightbox="familia-gallery" data-title="Πιάτο 1">
+        <img src="images/photo1.jpeg" alt="πιάτο 1">
+      </a>
+      <a href="images/photo2.jpeg" data-lightbox="familia-gallery" data-title="Πιάτο 2">
+        <img src="images/photo2.jpeg" alt="πιάτο 2">
+      </a>
+      <a href="images/photo3.jpeg" data-lightbox="familia-gallery" data-title="Πιάτο 3">
+        <img src="images/photo3.jpeg" alt="πιάτο 3">
+      </a>
     </div>
   </div>
 </section>
@@ -58,5 +67,7 @@
   <p>© 2025 Η Φαμίλια - Ψητοπωλείο | Χαλάνδρι</p>
 </footer>
 
+<!-- Lightbox2 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 </body>
 </html>
