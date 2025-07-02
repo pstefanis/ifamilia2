@@ -15,9 +15,95 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
   />
-
   <style>
-    /* Keep hidden gallery container out of view but present in DOM */
+    /* Your main styles */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #111;
+      color: #f0f0f0;
+    }
+
+    h1, h2 {
+      font-family: 'Noto Serif Greek', serif;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('images/hero.jpg') center center no-repeat;
+      background-size: 110% auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    section {
+      padding: 60px 20px;
+      background-color: #111;
+    }
+
+    section:nth-child(even) {
+      background-color: #1a1a1a;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .menu-button {
+      display: inline-block;
+      background-color: #fff;
+      color: #111;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .menu-button:hover {
+      background-color: #ccc;
+      color: #111;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .gallery-grid a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    /* Only style iframe in the location section (Google Map) */
+    section.location iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* Hide the menu-gallery offscreen instead of display:none */
     #menu-gallery {
       position: absolute;
       width: 0;
@@ -25,6 +111,29 @@
       overflow: hidden;
       left: -9999px;
       top: -9999px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* LightGallery iframe full size */
+    .lg-iframe {
+      width: 100% !important;
+      height: 100vh !important;
+    }
+
+    /* HERO image fix for mobile */
+    @media (max-width: 768px) {
+      .hero {
+        height: 60vh;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
   </style>
 </head>
@@ -45,9 +154,9 @@
   <section class="menu">
     <div class="container">
       <h2>Το Μενού μας</h2>
-      <a id="menu-button" href="javascript:void(0);" class="menu-button"
-        >Δείτε το μενού (PDF)</a
-      >
+      <a id="menu-button" href="javascript:void(0);" class="menu-button">
+        Δείτε το μενού (PDF)
+      </a>
     </div>
   </section>
 
@@ -55,13 +164,13 @@
   <div id="menu-gallery">
     <a
       href="menu.pdf"
+      data-src="menu.pdf"
       data-lg-size="800-1120"
       data-sub-html="<h4>Το Μενού μας</h4>"
       data-iframe="true"
       data-lg-iframe-width="80%"
       data-lg-iframe-height="90%"
     >
-      <!-- href required, but iframe will be used -->
       PDF Menu
     </a>
   </div>
@@ -152,9 +261,9 @@
       },
     });
 
-    // Button click opens menu gallery
+    // Button click opens menu gallery, open slide 0 explicitly
     document.getElementById("menu-button").addEventListener("click", function () {
-      menuGallery.openGallery();
+      menuGallery.openGallery(0);
     });
   </script>
 </body>
