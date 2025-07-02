@@ -12,8 +12,7 @@ h1, h2 {
 .hero {
   position: relative;
   height: 100vh;
-  background: url('images/hero.jpg') center center no-repeat;
-  background-size: 110% auto; /* zoom out a bit horizontally */
+  background: url('images/hero.jpg') center center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,22 +74,11 @@ section:nth-child(even) {
   cursor: pointer;
 }
 
-/* Only style iframe in the location section (Google Map) */
-section.location iframe {
+iframe {
   width: 100%;
   height: 300px;
   border: none;
   border-radius: 8px;
-}
-
-/* Hide the menu-gallery offscreen instead of display:none */
-#menu-gallery {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  left: -9999px;
-  top: -9999px;
 }
 
 footer {
