@@ -76,7 +76,12 @@
   lightGallery(document.getElementById('gallery-container'), {
     plugins: [lgZoom, lgThumbnail],
     speed: 500,
-    download: false
+    download: false,
+    mobileSettings: {
+      controls: true,      // ✅ show arrows on mobile
+      showCloseIcon: true, // optional: keep close button visible
+      download: false,
+    }
   });
 </script>
 
